@@ -1,0 +1,29 @@
+name: Java CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          
+      - name: Compile Java files
+        run: javac -d out src/com/example/*.java
+        
+      - name: Test basic commands
+        run: |
+          java -cp out com.example.App --cmd=add --text="CI Test" && echo "Add command OK"
+          java -cp out com.example.App --cmd=list && echo "List command OK"
