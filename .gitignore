@@ -1,0 +1,7 @@
+data/notes.csv
+*.class
+*.log
+.DS_Store
+.vscode/out/
+.vscode/
+*.class
