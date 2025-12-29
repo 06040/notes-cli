@@ -51,4 +51,7 @@ public class NotesStore {
     public List<String[]> getAllNotes() {
         return new ArrayList<>(notes);
     }
+    public int getNotesCount() {
+    return notes.size();
+}
 }

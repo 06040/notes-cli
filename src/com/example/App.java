@@ -44,6 +44,11 @@ public class App {
                 }
                 break;
 
+            case "count":
+                int count = store.getNotesCount();
+                System.out.println(count);
+                break;
+
             default:
                 System.out.println("Unknown command: " + command);
                 break;
